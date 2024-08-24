@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://data-visuals.onrender.com//api'; 
+const API_BASE_URL = 'https://data-visuals.onrender.com/api'; 
 
 export const fetchSalesData = async (period) => {
     try {
