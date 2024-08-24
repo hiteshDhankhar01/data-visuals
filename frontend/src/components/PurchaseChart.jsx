@@ -4,7 +4,6 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 import { fetchRepeatCustomersData } from '../services/api';
 import GraphLoader from './GraphLoader';
 
-// Register Chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const PurchaseChart = ({ period }) => {
@@ -18,7 +17,6 @@ const PurchaseChart = ({ period }) => {
                 const response = await fetchRepeatCustomersData(period);
                 const data = response.data;
 
-                // Process data based on period
                 let periodPurchaseData = {};
 
                 if (period === 'yearly') {
@@ -47,7 +45,6 @@ const PurchaseChart = ({ period }) => {
                     }, {});
                 }
 
-                // Prepare data for Chart.js
                 const chartData = {
                     labels: Object.keys(periodPurchaseData),
                     datasets: [
@@ -113,98 +110,3 @@ const PurchaseChart = ({ period }) => {
 };
 
 export default PurchaseChart;
-
-// import { useEffect, useState } from 'react';
-// import { Bar } from 'react-chartjs-2';
-// import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
-// import { fetchRepeatCustomersData } from '../services/api';
-// import 'tailwindcss/tailwind.css';
-// import GraphLoader from './GraphLoader';
-
-// // Register Chart.js components
-// ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
-
-// const PurchaseChart = () => {
-//     const [chartData, setChartData] = useState({});
-//     const [loading, setLoading] = useState(true);
-
-//     useEffect(() => {
-//         const fetchData = async ({ period }) => {
-//             try {
-//                 setLoading(true);
-//                 const response = await fetchRepeatCustomersData(period);
-//                 const data = response.data;
-
-//                 // Process data to group by year and sum purchase counts
-//                 const yearPurchaseData = data.reduce((acc, item) => {
-//                     const year = item._id.year;
-//                     acc[year] = (acc[year] || 0) + item.purchaseCount;
-//                     return acc;
-//                 }, {});
-
-//                 // Prepare data for Chart.js
-//                 const chartData = {
-//                     labels: Object.keys(yearPurchaseData),
-//                     datasets: [
-//                         {
-//                             label: 'Purchase Count',
-//                             data: Object.values(yearPurchaseData),
-//                             backgroundColor: 'rgba(75, 192, 192, 0.2)',
-//                             borderColor: 'rgba(75, 192, 192, 1)',
-//                             borderWidth: 1,
-//                         },
-//                     ],
-//                 };
-
-//                 setChartData(chartData);
-//                 setLoading(false);
-//             } catch (error) {
-//                 console.error("Error fetching repeat customer data:", error);
-//                 setLoading(false);
-//             }
-//         };
-
-//         fetchData();
-//     }, []);
-
-//     const options = {
-//         responsive: true,
-//         plugins: {
-//             legend: {
-//                 position: 'top',
-//             },
-//             title: {
-//                 display: true,
-//                 text: 'Purchases by Year',
-//             },
-//         },
-//         scales: {
-//             x: {
-//                 title: {
-//                     display: true,
-//                     text: 'Year',
-//                 },
-//             },
-//             y: {
-//                 beginAtZero: true,
-//                 title: {
-//                     display: true,
-//                     text: 'Purchase Count',
-//                 },
-//             },
-//         },
-//     };
-
-//     return (
-//         <div className="max-w-lg mx-auto p-4 shadow-md rounded-lg">
-//             <h2 className="text-2xl font-semibold text-center mb-4">Purchase Count by Year</h2>
-//             {loading ? (
-//                 <GraphLoader />
-//             ) : (
-//                 <Bar data={chartData} options={options} />
-//             )}
-//         </div>
-//     );
-// }
-
-// export default PurchaseChart;

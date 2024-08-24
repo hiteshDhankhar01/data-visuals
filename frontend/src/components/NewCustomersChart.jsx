@@ -1,4 +1,3 @@
-// SalesGrowthRateChart.js
 import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
@@ -17,7 +16,6 @@ const NewCustomersChart = ({ period }) => {
                 const responce = await fetchNewCustomersData(period);
                 const data = responce.data
 
-                // Prepare data for Chart.js
                 const chartData = {
                     labels: data.map(item => item.name),
                     datasets: [

@@ -1,6 +1,5 @@
 import React from 'react';
 import SalesChart from '../components/SalesChart';
-// import PurchaseChart from '../components/Reapt';
 import RepeatCustomerLineChart from '../components/RepeatCustomerLineChart';
 
 const Sales = () => {
@@ -19,7 +18,6 @@ const Sales = () => {
                 <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
                     <h3 className="text-xl font-semibold mb-4">Yearly Sales</h3>
                     <SalesChart period="yearly" />
-
                 </div>
                 <div className="bg-gray-800 p-4 rounded-lg shadow-lg md:col-span-2">
                     <h3 className="text-xl font-semibold mb-4">Quarterly Sales</h3>
@@ -28,14 +26,12 @@ const Sales = () => {
                 <div className="bg-gray-800 p-4 rounded-lg shadow-lg xl:col-span-2">
                     <h3 className="text-xl font-semibold mb-4">Yearly Sales</h3>
                     <RepeatCustomerLineChart period="yearly" />
-
                 </div>
                 <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
                     <h3 className="text-xl font-semibold mb-4">Monthly Sales</h3>
                     <RepeatCustomerLineChart period="monthly" />
                 </div>
                 <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-
                     <h3 className="text-xl font-semibold mb-4">Daily Sales</h3>
                     < RepeatCustomerLineChart period="daily" />
                 </div>

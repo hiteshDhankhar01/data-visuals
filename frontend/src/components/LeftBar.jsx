@@ -41,38 +41,3 @@ const LeftSideBar = () => {
 };
 
 export default LeftSideBar;
-
-
-// "use client"
-
-// import Link from "next/link";
-// import { usePathname } from "next/navigation";
-
-// import { navLinks } from "../../lib/constants";
-
-// const LeftSideBar = () => {
-//     const pathname = usePathname();
-
-//     return (
-//         <div className="h-screen left-0 top-0 sticky p-10 flex flex-col gap-16 bg-blue-2 shadow-xl max-lg:hidden">
-//             <img src="https://www.shutterstock.com/image-vector/increasing-stocks-icon-trendy-logo-600nw-1255577029.jpg" alt="logo" className="h-4 w-4 object-contain" />
-
-//             <div className="flex flex-col gap-12">
-//                 {navLinks.map((link) => (
-//                     <Link
-//                         href={link.url}
-//                         key={link.label}
-//                         className={`flex gap-4 text-body-medium ${pathname === link.url ? "text-blue-1" : "text-grey-1"
-//                             }`}
-//                     >
-//                         {link.icon} <p>{link.label}</p>
-//                     </Link>
-//                 ))}
-//             </div>
-
-            
-//         </div>
-//     );
-// };
-
-// export default LeftSideBar;

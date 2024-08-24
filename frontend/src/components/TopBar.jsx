@@ -58,7 +58,6 @@ const TopBar = () => {
                 )}
             </div>
         </div>
-
     );
 };
 

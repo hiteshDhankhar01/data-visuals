@@ -11,13 +11,11 @@ const Router = () => {
     return (
         <div>
             <Routes>
-                {/* <Route index element={<Home />} /> */}
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/sales" element={<Sales />} />
                 <Route path="/orders" element={<Orders />} />
                 <Route path="/customers" element={<Customer />} />
-                {/* <Route path='/*' element={<PageNotFound/>} /> */}
             </Routes>
         </div>
     )

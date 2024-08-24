@@ -9,23 +9,18 @@ const Customer = () => {
         <div className="min-h-screen p-6">
             <h2 className="text-3xl font-bold mb-8 border-b border-gray-300 pb-2">Custmer</h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-1">
-                {/* Daily Sales */}
-
                 <div className="bg-gray-800 p-4 rounded-lg shadow-lg xl:col-span-2">
                     <h3 className="text-xl font-semibold mb-4">Daily New Customers</h3>
                     <NewCustomersChart period="daily" />
                 </div>
-                {/* Monthly Sales */}
                 <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
                     <h3 className="text-xl font-semibold mb-4">Monthly New Customers</h3>
                     <NewCustomersChart period="monthly" />
                 </div>
-                {/* Quarterly Sales */}
                 <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col justify-between">
                     <h3 className="text-xl font-semibold mb-4">Yearly New Customers</h3>
                     <NewCustomersChart period="yearly" />
                 </div>
-                {/* Yearly Sales */}
                 <div className="bg-gray-800 p-4 rounded-lg xl:col-span-2">
                     <h3 className="text-xl font-semibold mb-4">Quarterly New Customers</h3>
                     <NewCustomersChart period="quarterly" />
@@ -56,7 +51,6 @@ const Customer = () => {
                     <RepeatCustomerLineChart period="quarterly" />
                 </div>
             </div>
-
         </div>
     )
 }
