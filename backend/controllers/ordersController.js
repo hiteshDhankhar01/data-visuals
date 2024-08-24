@@ -1,4 +1,4 @@
-const shopifyOrders = require('../models/order');
+const shopifyOrders = require('../models/shopifyOrders')
 
 // Get all orders
 exports.getAllOrders = async (req, res) => {
